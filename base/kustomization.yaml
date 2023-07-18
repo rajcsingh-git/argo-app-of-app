@@ -3,5 +3,5 @@ kind: Kustomization
 metadata:
   name: Deploy Apps
 resources:
-- ./deploy_project.yaml
-#- ./deploy_apps.yaml
+- ./app-project1.yaml
+- ./app-project2.yaml

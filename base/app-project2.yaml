@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project2
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Example Project
+
+  sourceRepos:
+  - 'https://github.com/rajcsingh-git/argo-app-of-app/*'
+  # Only permit applications to deploy to the guestbook namespace in the same cluster
+  # Destination clusters can be identified by 'server', 'name', or both.
+  destinations:
+#  - namespace: '*'
+  - namespace: test7
+    #server: 'https://kubernetes.default.svc'
+    server: '*'
+    #name: in-cluster
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: 'Application'
+
+#---Below mentioned lines will provide rbac access to App Project - meaning specific namespace
+#  roles:
+#  - name: view
+#    description:
+#    policies:
+#    - p,proj:project2:view, applications, get, project2/dev, allow
+#    - p,proj:project2:view, applications, sync, project2/dev, allow
+#    - p,proj:project2:view, logs, get, project2/dev, allow
+#    - p,proj:project2:view, exec, create, project2/dev, allow
+#    groups:
+#    - AD_gid_1
+#    - AD_gid_2
