@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io
+kind: Ingress
+metadata:
+  name: argocd-ingress
+spec:
+  rules:
+    host:
+    - path:
+      pathType: 
+      
+

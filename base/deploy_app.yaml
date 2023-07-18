@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app1
+  namespace: argocd
+spec:
+  project: project1
+  source:
+    repoURL: 'https://github.com/rajcsingh-git/apps.yaml'
+    targetRevision: main
+    path: app-of-apps
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd 
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
