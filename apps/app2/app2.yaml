@@ -10,9 +10,9 @@ spec:
   source:
     repoURL: https://github.com/rajcsingh-git/argo-app-of-app
     targetRevision: main  
-    path: ./apps/app1
+    path: ./apps/app2
   destination:
-    namespace: test6
+    namespace: test5
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
