@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app1
+  name: app2
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: project1
+  project: project2
   source:
     repoURL: https://github.com/rajcsingh-git/argo-app-of-app
     targetRevision: main  
