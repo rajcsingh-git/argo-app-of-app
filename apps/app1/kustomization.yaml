@@ -3,5 +3,5 @@ kind: Kustomization
 metadata:
   name: app1
 resources:
-- ../../base
+#- ../../base
 - ./app1.yaml
