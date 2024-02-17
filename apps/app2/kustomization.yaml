@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 metadata:
-  name: app1
+  name: app2
 resources:
 - ../../base
-- ./app1.yaml
+- ./app2.yaml
