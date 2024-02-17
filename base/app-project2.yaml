@@ -13,8 +13,8 @@ spec:
   # Only permit applications to deploy to the guestbook namespace in the same cluster
   # Destination clusters can be identified by 'server', 'name', or both.
   destinations:
-#  - namespace: '*'
-  - namespace: test7
+  - namespace: '*'
+#  - namespace: test7
     #server: 'https://kubernetes.default.svc'
     server: '*'
     #name: in-cluster
